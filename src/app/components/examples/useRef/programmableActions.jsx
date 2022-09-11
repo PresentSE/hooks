@@ -5,7 +5,10 @@ import SmallTitle from "../../common/typografy/smallTitle";
 const ProgrammableActionsExample = () => {
     const inputRef = useRef();
     const handleClick = () => {
-        console.log(inputRef.current);
+        inputRef.current.focus();
+    };
+    const handleClickWidth = () => {
+        inputRef.current.style.width = "100px";
     };
     return (
         <CardWrapper>
@@ -13,7 +16,9 @@ const ProgrammableActionsExample = () => {
                 Программируемые действия и свойства
             </SmallTitle>
             <Divider />
-            <label htmlFor="" className="form-label"></label>
+            <label htmlFor="" className="form-label">
+                Email
+            </label>
             <input
                 ref={inputRef}
                 type="email"
@@ -21,7 +26,10 @@ const ProgrammableActionsExample = () => {
                 id="email"
             />
             <button className="btn btn-primary" onClick={handleClick}>
-                Кнопка
+                Фокус input
+            </button>
+            <button className="btn btn-secondary" onClick={handleClickWidth}>
+                Изменить ширину объекта
             </button>
         </CardWrapper>
     );
