@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 const FormComponent = ({ children }) => {
     const [data, setData] = useState({});
     useEffect(() => {
-        console.log(data);
+        // console.log(data);
     }, [data]);
     const handleChange = (target) => {
         setData((prevState) => ({ ...prevState, [target.name]: target.value }));
@@ -20,7 +20,6 @@ const FormComponent = ({ children }) => {
             onChange: handleChange,
             value: data[child.props.name] || ""
         };
-        console.log(child);
         return React.cloneElement(child, config);
     });
 };
